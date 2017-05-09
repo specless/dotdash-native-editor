@@ -1,0 +1,337 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Flex Impact Preview</title>
+  <link rel="stylesheet" href="qit.css">
+  <style>
+  .ui-resizable-e {
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    padding: 14px 3px 10px 3px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    z-index: 0 !important;
+    opacity:0.60;
+    transform: translateY(-50%);
+  }
+
+  .ui-resizable-e::before, .ui-resizable-w::before {
+    transform: rotate(90deg);
+  }
+
+  .ui-resizable-w {
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    padding: 14px 3px 10px 3px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    z-index: 0 !important;
+    opacity:0.60;
+    transform: translateY(-50%);
+  }
+
+  .iframe-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 2;
+  }
+
+  .ui-resizable-resizing .iframe-overlay {
+    display: block;
+  }
+
+  #browser {
+    left: 0 !important;
+    right: 0 !important;
+    position: absolute;
+    top: 30px;
+    height:500px;
+    min-width: 375px;
+    max-width: 1245px;
+    width: calc(100% - 65px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #browser.mobile-view {
+    max-width: 520px !important;
+    min-width: 320px !important;
+  }
+
+  #iframe {
+    position: relative;
+    z-index:1;
+    background-color: white;
+  }
+
+  /*#resizer {
+    max-width: 1245px;
+    height: 277px;
+  }*/
+  </style>
+</head>
+
+<body class="sp-app sp-technical">
+  <div class="sp-app-bar sp-container-light sp-contrast sp-wrapper">
+    <div class="sp-row sp-fluid sp-vcenter sp-height-3">
+      <div class="sp-col sp-span-6 sp-flex" style="align-items: center;">
+        <img src="https://www.dotdash.com/assets/img/dash/dash-logo-tiny@2x.png" width="60" class="sp-margin-right-1"/>
+        <div class="sp-spacer-horizontal sp-margin-right-2"></div>
+        <p class="sp-margin-left-1 sp-inline sp-margin-0 sp-contrast sp-large">Native Unit Editor</p>
+      </div>
+      <div class="sp-col sp-span-6 sp-align-right sp-small">
+        <img class="sp-width-4 sp-float-right" src="assets/img/powered-by.png"/>
+      </div>
+    </div>
+  </div>
+  <div class="sp-app-menu sp-container-light sp-contrast sp-border-top-base sp-wrapper">
+    <div class="sp-row sp-fluid sp-height-2 sp-vcenter sp-padding-horizontal-3 sp-small" style="min-width: 0;position: relative">
+      <div class="sp-selector">
+        <input id="creativeId" class="sp-padding-icon-left sp-padding-label sp-selector-trigger sp-align-right sp-width-7" type="url" value="jRf8TK" style="text-align: left; padding-left: 130px"/>
+        <div class="sp-selector-overlay sp-icon-creative">
+          <div class="sp-selector-label" style="height: 100%;line-height: 2.2;">Creative ID</div>
+        </div>
+      </div>
+      <button class="sp-margin-left-1 sp-icon-arrow-right"></button>
+      <h6 class="sp-margin-left-2">Creative Name Goes Here</h6>
+      <div style="position: absolute; right: 0">
+        <button class="sp-margin-right-3 sp-icon-external sp-float-right">Open Preview Link</button>
+      </div>
+    </div>
+  </div>
+  <div class="sp-container-light sp-app-content sp-wrapper">
+    <div class="sp-app-scroll-area sp-align-center">
+      <div id="browser" class="sp-overlay sp-inline" style="">
+        <iframe id="iframe" src="preview.html" style="width: 100%;border: 0; height: 100%; width: 100%"></iframe>
+        <div class="iframe-overlay"></div>
+      </div>
+      <div class="sp-overlay sp-wrapper sp-align-left sp-margin-left-3 sp-margin-right-3 sp-margin-bottom-3" style="margin-top: 560px;">
+        <div class="sp-row sp-border-bottom-base">
+          <div class="sp-col sp-span-12">
+            <h4 class="sp-contrast "><span class="sp-inline-icon-settings sp-color-primary sp-margin-right-2"></span>Settings</h4>
+          </div>
+        </div>
+        <div class="sp-row">
+          <div class="sp-col sp-span-4 sp-align-right">
+            <h6>Sponsor Name</h6>
+            <p>The name of the sponsor</p>
+          </div>
+          <div class="sp-col sp-span-8">
+            <input type="text" value="Alcon Dalies" class="sp-width-7"/>
+          </div>
+        </div>
+
+        <div class="sp-row">
+          <div class="sp-col sp-span-4 sp-align-right">
+            <h6>Sponsor Logo</h6>
+            <p>Must be an image approximately 120 x 20px</p>
+          </div>
+          <div class="sp-col sp-span-8">
+            <input type="text" readonly value="https://someimageurl.com" class="sp-width-7"/><button class="sp-margin-left-2">Upload Image</button>
+          </div>
+        </div>
+
+        <div class="sp-row">
+          <div class="sp-col sp-span-4 sp-align-right">
+            <h6>Main Image</h6>
+            <p>Image must not be larger than 600x600</p>
+          </div>
+          <div class="sp-col sp-span-8">
+            <input type="text" readonly value="https://someimageurl.com" class="sp-width-7"/><button class="sp-margin-left-2">Upload Image</button>
+          </div>
+        </div>
+
+        <div class="sp-row">
+          <div class="sp-col sp-span-4 sp-align-right">
+            <h6>Headline</h6>
+            <p>Enter a headline</p>
+          </div>
+          <div class="sp-col sp-span-8">
+            <input type="text" value="Create a Relaxing Summer Space" class="sp-width-7"/>
+          </div>
+        </div>
+
+        <div class="sp-row">
+          <div class="sp-col sp-span-4 sp-align-right">
+            <h6>Body Copy</h6>
+            <p>Enter the body copy</p>
+          </div>
+          <div class="sp-col sp-span-8">
+            <textarea class="sp-width-7 sp-height-5">Welcome summer into your home with airy rooms, fragrant flowers and no-sweat cooking. Sit back, relax and enjoy the easy, breezy days of summer.</textarea>
+          </div>
+        </div>
+
+        <div class="sp-row sp-border-bottom-base">
+          <div class="sp-col sp-span-4 sp-align-right">
+            <h6>Call To Action</h6>
+            <p>Enter the Call To Action Verbiage</p>
+          </div>
+          <div class="sp-col sp-span-8">
+            <input type="text" value="Learn More" class="sp-width-7"/>
+          </div>
+        </div>
+
+        <div class="sp-row sp-border-bottom-base">
+          <div class="sp-col sp-span-4 sp-align-right">
+            <button class="sp-primary">Preview</button>
+          </div>
+          <div class="sp-col sp-span-8">
+            <button class="sp-warning sp-margin-right-3">Reset/Discard Changes</button>
+            <button class="sp-success">Save Changes</button>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <!-- <div class="sp-app-footer sp-container-light sp-contrast sp-border-top-base">
+    <div class="sp-row sp-fluid sp-height-1">
+      
+    </div>
+  </div> -->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+<script>
+$( function() {
+  $( "#browser" ).resizable({
+    handles: "e, w",
+    classes: {
+      "ui-resizable-e": "sp-icon-dropdown sp-overlay",
+      "ui-resizable-w": "sp-icon-dropdown sp-overlay"
+    }
+  });
+} );
+</script>
+
+<!-- var getData = function() {
+  var url = $('#previewUrl').val();
+  var creative = $("#creativeId").val();
+  var testParam = $(".aspect-button.sp-state-active").attr('data-test');
+  var aspect = $(".aspect-button.sp-state-active").attr('data-aspect');
+
+  return {
+    url: url,
+    creative: creative,
+    testParam: testParam,
+    aspect: aspect
+  } 
+}
+
+var getUrl = function() {
+  var data = getData();
+  var url = data.url + '?kw=' + data.testParam + '&creative=' + data.creative + '&aspect=' + data.aspect;
+  return url;
+}
+
+var setIframe = function(url) {
+  $('#iframe').attr('src', url);
+  var data = getData();
+  history.replaceState({}, "", "?url=" + data.url + '&creative=' + data.creative + "&aspect=" + data.aspect);
+}
+
+var urlParams = function() {
+  var params = window.location.search;
+  params = params.split('&');
+  var obj = {}
+  for ( var i = 0; i < params.length; i++) { 
+    params[i] = params[i].replace('?', '');
+    params[i] = params[i].split('=');
+    var param = params[i];
+    if (param[0] == 'url' || param[0] == 'creative' || param[0] == 'aspect') {
+      obj[param[0]] = param[1];
+    }
+  }
+  return obj
+}
+
+var init = function() {
+  var params = urlParams();
+
+  if (params.url) {
+    $('.url-button').removeClass('sp-state-active');
+    $('#previewUrl').val(params.url);
+  }
+
+  if (params.creative) {
+    $('.creative-button').removeClass('sp-state-active');
+    $('#creativeId').val(params.creative);
+  }
+
+  if (params.aspect) {
+    $('.aspect-button').removeClass('sp-state-active');
+    $('[data-aspect="' + params.aspect + '"]').addClass('sp-state-active');
+    var data = getData();
+    if (data.aspect == '2by1') {
+      $('#browser').addClass('mobile-view');
+    } else {
+      $('#browser').removeClass('mobile-view');
+    }
+  }
+
+  setIframe(getUrl());
+}
+
+init();
+
+
+$('.url-button').click(function() {
+  $('.url-button').removeClass('sp-state-active');
+  var url = $(this).attr('data-url');
+  $(this).addClass('sp-state-active');
+  $('#previewUrl').val(url);
+  setIframe(getUrl());
+});
+
+$('.creative-button').click(function() {
+  $('.creative-button').removeClass('sp-state-active');
+  var creative = $(this).attr('data-creative');
+  $(this).addClass('sp-state-active');
+  $('#creativeId').val(creative);
+  setIframe(getUrl());
+});
+
+$('.aspect-button').click(function() {
+  $('.aspect-button').removeClass('sp-state-active');
+  $(this).addClass('sp-state-active');
+  var data = getData();
+  if (data.aspect == '2by1') {
+    $('#browser').addClass('mobile-view');
+  } else {
+    $('#browser').removeClass('mobile-view');
+  }
+  setIframe(getUrl());
+});
+
+$("#reload").click(function() {
+  var data = getData();
+  if (data.aspect == '2by1') {
+    $('#browser').addClass('mobile-view');
+  } else {
+    $('#browser').removeClass('mobile-view');
+  }
+  setIframe(getUrl());
+});
+
+$("#newWindow").click(function() {
+  window.open(getUrl(), 'newWindow');
+  return false;
+}); -->
+
+</script>
+</body>
+</html>

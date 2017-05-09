@@ -1,0 +1,442 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dotdash Native Example</title>
+  <style type="text/css">
+  .sp-native-vw {
+    position: relative;
+    font-family: Slab, Georgia, serif;
+    overflow: auto;
+    margin: 20px 0;
+  }
+  .sp-native-vw .sp-native-frame {
+    width: 100%;
+    padding: 19px 15px;
+    color: #1a1a1a;
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    overflow: auto;
+  }
+  .sp-native-container {
+    width: 100%;
+    margin: 20px 0;
+  }
+  .sp-native-vw .sp-native-img-wrapper {
+    float: right;
+    padding-bottom: 180px;
+    width: 278px;
+    margin-left: 15px;
+    position: relative;
+    overflow: hidden;
+  }
+  @media only screen and (max-width: 999px) {
+    .sp-native-vw .sp-native-img-wrapper {
+      padding-bottom: 32%;
+      width: 50%;
+    }
+  }
+  @media only screen and (max-width: 863px) {
+    .sp-native-vw .sp-native-img-wrapper {
+      padding-bottom: 23.41%;
+      width: 36.15%;
+    }
+  }
+  .sp-native-vw .sp-native-img-wrapper div {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-size: cover !important;
+    -ms-border-radius: 9px;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+    -ms-border-bottom-left-radius: 9px;
+    -moz-border-bottom-left-radius: 9px;
+    -webkit-border-bottom-left-radius: 9px;
+    border-bottom-left-radius: 0;
+  }
+  .sp-native-vw .sp-native-content-wrapper {
+    font-family: 'Calibri';
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .sp-native-vw .sp-native-sponsor-wrapper {
+    text-align: left;
+    height: 32px;
+    font-family: 'FS Albert Extra Bold', HelveticaNeue, Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin: 0 0 10px 0;
+  }
+  .sp-native-vw .sp-native-sponsor-wrapper img {
+    vertical-align: middle;
+    padding-left: 10px;
+    max-width: 100px;
+    max-height: 30px;
+    display: inline;
+  }
+  .sp-native-vw .sp-native-sponsor-wrapper .sp-native-sponsor-name {
+    display: none;
+  }
+  .sp-native-vw .sp-native-play {
+    display: inline-block;
+    color: red;
+    font-size: 13px;
+    border: 1px solid red;
+    border-radius: 100%;
+    height: 24px;
+    width: 24px;
+  }
+
+  /* Text */
+
+  .sp-native-vw h1 {
+    font-size: 21px;
+    line-height: 24px;
+    font-weight: 600;
+    text-align: left;
+    margin: 0 0 10px 0;
+  }
+  .sp-native-vw p {
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: normal;
+    margin: 0 0 5px 0 !important;
+    text-align: left;
+    color: #444;
+  }
+  .sp-native-vw .sp-native-learn {
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    float: left;
+    font-family: 'FS Albert Extra Bold', HelveticaNeue, Helvetica, Arial, sans-serif;
+  }
+  .sp-native-vw a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .sp-native-vw a:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+  @media screen and (max-width:450px) {
+    .sp-native-vw {
+      position: relative;
+      font-family: Slab, Georgia, serif;
+      overflow: auto;
+      margin: 20px 0;
+    }
+    .sp-native-vw .sp-native-frame {
+      width: 100%;
+      padding: 19px 15px;
+      color: #1a1a1a;
+      border-top: solid 1px #ccc;
+      border-bottom: solid 1px #ccc;
+      overflow: auto;
+    }
+    .sp-native-container {
+      width: 100%;
+      margin: 20px 0;
+    }
+    .sp-native-vw .sp-native-img-wrapper {
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      width: 45%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      z-index: -1;
+    }
+    .sp-native-vw .sp-native-img-wrapper div {}
+    .sp-native-vw .sp-native-content-wrapper {
+      width: 50%;
+      padding-right: 3px;
+    }
+    .sp-native-vw .sp-native-sponsor-wrapper {
+      font-size: 11px;
+      line-height: 28px;
+      height: auto;
+    }
+    .sp-native-vw .sp-native-sponsor-wrapper img {
+      display: none;
+    }
+    .sp-native-vw .sp-native-sponsor-wrapper .sp-native-sponsor-name {
+      display: inline;
+    }
+    .sp-native-vw .sp-native-play {}
+    /* Text */
+    .sp-native-vw h1 {}
+    .sp-native-vw p {
+      display: none;
+    }
+    .sp-native-vw .sp-native-learn {}
+  }
+  </style>
+</head>
+<body>
+  <h1>Rendered Example</h1>
+  <div id="native-placeholder_1-0" class="comp native-placeholder mntl-block">
+
+    <!-- Begin Inserted Native Code -->
+    <div id="native-ad" class="native-container" data-tracking-container="true">
+      <div class="sp-native-vw">
+        <a href="https://www.thespruce.com/sponsored/anewwayeveryday?mv-preview&amp;_ga=2.137574389.411776805.1494348392-72026031.1493840600" target="_blank" id="CTA" rel="nofollow">
+          <div class="sp-native-frame">
+            <div class="sp-native-img-wrapper">
+              <div style="background: url('http://meraxes-cdn.polarmobile.com/image/v1.0.0/bin/58e79e880f43afc45349143f?v=0eced&amp;w=960') no-repeat center center;"></div>
+            </div>
+            <div class="sp-native-content-wrapper">
+              <!--Sponsor-->
+              <div class="sp-native-sponsor-wrapper">
+                SPONSORED BY
+                <img class="sp-native-sponsor-wrapper-logo" src="http://meraxes-cdn.polarmobile.com/image/v1.0.0/bin/58a70e9446a6cdbeb027c54e?v=2c029&amp;w=322"/>
+                <span class="sp-native-sponsor-name">Alcon Dailies</span>
+              </div>
+              <h1>Create a Relaxing Summer Space</h1>
+              <p>Welcome summer into your home with airy rooms, fragrant flowers and no-sweat cooking. Sit back, relax and enjoy the easy, breezy days of summer.</p>
+              <div class="sp-native-learn">Learn more
+                <svg class="text-btn-icon icon-circle-arrow-right">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-circle-arrow-right"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- End Inserted Native Code -->
+
+  </div>
+
+<h1>HTML Template</h1>
+<pre>
+
+    &lt;!-- Begin Native Template Code --&gt;
+    &lt;div id=&quot;native-ad&quot; class=&quot;native-container&quot; data-tracking-container=&quot;true&quot;&gt;
+      &lt;div class=&quot;sp-native-vw&quot;&gt;
+        &lt;a href=&quot;{{data.clickThrough}}&quot; target=&quot;_blank&quot; id=&quot;CTA&quot; rel=&quot;nofollow&quot;&gt;
+          &lt;div class=&quot;sp-native-frame&quot;&gt;
+            &lt;div class=&quot;sp-native-img-wrapper&quot;&gt;
+              &lt;div style=&quot;background: url('{{data.mainImage}}') no-repeat center center;&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;sp-native-content-wrapper&quot;&gt;
+              &lt;!--Sponsor--&gt;
+              &lt;div class=&quot;sp-native-sponsor-wrapper&quot;&gt;
+                SPONSORED BY
+                &lt;img class=&quot;sp-native-sponsor-wrapper-logo&quot; src=&quot;{{data.sponsorLogo}}&quot;/&gt;
+                &lt;span class=&quot;sp-native-sponsor-name&quot;&gt;{{data.sponsorName}}&lt;/span&gt;
+              &lt;/div&gt;
+              &lt;h1&gt;{{data.headline}}&lt;/h1&gt;
+              &lt;p&gt;{{data.bodyCopy}}&lt;/p&gt;
+              &lt;div class=&quot;sp-native-learn&quot;&gt;{{data.callToAction}}
+                &lt;svg class=&quot;text-btn-icon icon-circle-arrow-right&quot;&gt;
+                  &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#icon-circle-arrow-right&quot;&gt;&lt;/use&gt;
+                &lt;/svg&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- End Native Template Code --&gt;
+</pre>
+<h1>Required Style Tag</h1>
+<pre>
+  &lt;style type=&quot;text/css&quot;&gt;
+  .sp-native-vw {
+    position: relative;
+    font-family: Slab, Georgia, serif;
+    overflow: auto;
+    margin: 20px 0;
+  }
+  .sp-native-vw .sp-native-frame {
+    width: 100%;
+    padding: 19px 15px;
+    color: #1a1a1a;
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    overflow: auto;
+  }
+  .sp-native-container {
+    width: 100%;
+    margin: 20px 0;
+  }
+  .sp-native-vw .sp-native-img-wrapper {
+    float: right;
+    padding-bottom: 180px;
+    width: 278px;
+    margin-left: 15px;
+    position: relative;
+    overflow: hidden;
+  }
+  @media only screen and (max-width: 999px) {
+    .sp-native-vw .sp-native-img-wrapper {
+      padding-bottom: 32%;
+      width: 50%;
+    }
+  }
+  @media only screen and (max-width: 863px) {
+    .sp-native-vw .sp-native-img-wrapper {
+      padding-bottom: 23.41%;
+      width: 36.15%;
+    }
+  }
+  .sp-native-vw .sp-native-img-wrapper div {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-size: cover !important;
+    -ms-border-radius: 9px;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+    -ms-border-bottom-left-radius: 9px;
+    -moz-border-bottom-left-radius: 9px;
+    -webkit-border-bottom-left-radius: 9px;
+    border-bottom-left-radius: 0;
+  }
+  .sp-native-vw .sp-native-content-wrapper {
+    font-family: 'Calibri';
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .sp-native-vw .sp-native-sponsor-wrapper {
+    text-align: left;
+    height: 32px;
+    font-family: 'FS Albert Extra Bold', HelveticaNeue, Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin: 0 0 10px 0;
+  }
+  .sp-native-vw .sp-native-sponsor-wrapper img {
+    vertical-align: middle;
+    padding-left: 10px;
+    max-width: 100px;
+    max-height: 30px;
+    display: inline;
+  }
+  .sp-native-vw .sp-native-sponsor-wrapper .sp-native-sponsor-name {
+    display: none;
+  }
+  .sp-native-vw .sp-native-play {
+    display: inline-block;
+    color: red;
+    font-size: 13px;
+    border: 1px solid red;
+    border-radius: 100%;
+    height: 24px;
+    width: 24px;
+  }
+
+  /* Text */
+
+  .sp-native-vw h1 {
+    font-size: 21px;
+    line-height: 24px;
+    font-weight: 600;
+    text-align: left;
+    margin: 0 0 10px 0;
+  }
+  .sp-native-vw p {
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: normal;
+    margin: 0 0 5px 0 !important;
+    text-align: left;
+    color: #444;
+  }
+  .sp-native-vw .sp-native-learn {
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    float: left;
+    font-family: 'FS Albert Extra Bold', HelveticaNeue, Helvetica, Arial, sans-serif;
+  }
+  .sp-native-vw a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .sp-native-vw a:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+  @media screen and (max-width:450px) {
+    .sp-native-vw {
+      position: relative;
+      font-family: Slab, Georgia, serif;
+      overflow: auto;
+      margin: 20px 0;
+    }
+    .sp-native-vw .sp-native-frame {
+      width: 100%;
+      padding: 19px 15px;
+      color: #1a1a1a;
+      border-top: solid 1px #ccc;
+      border-bottom: solid 1px #ccc;
+      overflow: auto;
+    }
+    .sp-native-container {
+      width: 100%;
+      margin: 20px 0;
+    }
+    .sp-native-vw .sp-native-img-wrapper {
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      width: 45%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      z-index: -1;
+    }
+    .sp-native-vw .sp-native-img-wrapper div {}
+    .sp-native-vw .sp-native-content-wrapper {
+      width: 50%;
+      padding-right: 3px;
+    }
+    .sp-native-vw .sp-native-sponsor-wrapper {
+      font-size: 11px;
+      line-height: 28px;
+      height: auto;
+    }
+    .sp-native-vw .sp-native-sponsor-wrapper img {
+      display: none;
+    }
+    .sp-native-vw .sp-native-sponsor-wrapper .sp-native-sponsor-name {
+      display: inline;
+    }
+    .sp-native-vw .sp-native-play {}
+    /* Text */
+    .sp-native-vw h1 {}
+    .sp-native-vw p {
+      display: none;
+    }
+    .sp-native-vw .sp-native-learn {}
+  }
+  &lt;/style&gt;
+</pre>
+
+<h1>JSON Object Example</h1>
+<pre>
+{
+  clickThrough: '',
+  sponsorLogo: '',
+  sponsorName: '',
+  mainImage: '',
+  headline: '',
+  bodyCopy: '',
+  callToAction: ''
+}
+</pre>
+</body>
+</html>
